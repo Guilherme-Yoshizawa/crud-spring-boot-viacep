@@ -36,7 +36,7 @@ Projeto CRUD desenvolvido com Java, Spring Boot e PostgreSQL.
 
 ### Rodando a aplicação
 1. Abra o projeto no IntelliJ
-2. Clique no botão **Run** (▶) no canto superior direito
+2. Clique no botão **Run** no canto superior direito ou SHIFT+F10
 3. O Flyway vai rodar os scripts automaticamente ao subir a aplicação
 
 ## Tecnologias utilizadas
