@@ -35,10 +35,9 @@ Projeto CRUD desenvolvido com Java, Spring Boot e PostgreSQL.
 3. Certifique que o banco `product` está criado no PostgreSQL
 
 ### Rodando a aplicação
-```bash
-./mvnw spring-boot:run
-```
-O Flyway vai rodar os scripts automaticamente ao subir a aplicação.
+1. Abra o projeto no IntelliJ
+2. Clique no botão **Run** (▶) no canto superior direito
+3. O Flyway vai rodar os scripts automaticamente ao subir a aplicação
 
 ## Tecnologias utilizadas
 - Java
