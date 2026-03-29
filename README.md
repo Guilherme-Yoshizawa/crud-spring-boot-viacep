@@ -1,23 +1,48 @@
-# Simple CRUD
-This repository contains a simple CRUD project built using Java Spring. 
+# Atividade M1 - CRUD com Spring Boot
 
-It is the second step of understanding how to manipulate variables through REST calls.
+## Sobre o projeto
+Projeto CRUD desenvolvido com Java, Spring Boot e PostgreSQL.
 
-All the relevant code now is inside the controller (for didactic purpose) 
-The Idea is to understand different REST components (Path, Param, Header and Body)
-And how to filter a list using them.
+## Alterações realizadas na atividade
 
-1. Start the application with Maven
-2. The API will be accessible at http://localhost:8080
+### Banco de dados
+- Adicionado o campo `distribution_center` na tabela `product` via script Flyway
+- Campo populado com 3 valores possíveis: `Mogi das Cruzes`, `Recife` e `Porto Alegre`
 
-## Database
-The project uses PostgresSQL as the database. The necessary database migrations are managed using Flyway.
-Just create a Database called Product and it should be usable.
+### Entidade
+- Adicionado o campo `distributionCenter` na classe `Product`
 
-To run the project: 
+### Service
+- Criado o `ViaCepService` que faz integração com a API do ViaCEP
+- A partir de um CEP, busca a cidade correspondente e compara com o `distribution_center` do produto
+- Retorna `true` se a cidade bater, `false` caso contrário
 
-Create a database on postgres called product
-Open the project on IntelliJ
-Configure the application.properties file with the proper ip/port/database name
-Clean Build (Or maven clean install)
-Run the mainclass 
+### Endpoint
+- Criado o endpoint `GET /product/disponibilidade`
+- Recebe `cep` e `productId` como parâmetros
+- Exemplo: `http://localhost:8080/product/disponibilidade?cep=08780100&productId=p1`
+
+## Como rodar o projeto
+
+### Pré-requisitos
+- Java 17+
+- PostgreSQL
+- Maven
+
+### Configuração do banco
+1. Renomeie o arquivo `application.properties.example` para `application.properties`
+2. Substitua `USER` e `SENHA` com suas credenciais do PostgreSQL
+3. Certifique que o banco `product` está criado no PostgreSQL
+
+### Rodando a aplicação
+```bash
+./mvnw spring-boot:run
+```
+O Flyway vai rodar os scripts automaticamente ao subir a aplicação.
+
+## Tecnologias utilizadas
+- Java
+- Spring Boot
+- PostgreSQL
+- Flyway
+- ViaCEP API
