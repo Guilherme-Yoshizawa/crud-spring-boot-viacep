@@ -1,0 +1,6 @@
+#RENOMEAR ESSE ARQUIVO PARA application.properties
+
+
+spring.datasource.url=jdbc:postgresql://localhost:5432/product
+spring.datasource.username=SEU_USER
+spring.datasource.password=SEU_PASSWORD
